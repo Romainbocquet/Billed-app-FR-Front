@@ -8,6 +8,8 @@ export default class NewBill {
     this.store = store
     const formNewBill = this.document.querySelector(`form[data-testid="form-new-bill"]`)
     formNewBill.addEventListener("submit", this.handleSubmit)
+    const buttonBillNav = document.querySelector(`div[data-testid="icon-window"]`)
+    if (buttonBillNav) buttonBillNav.addEventListener('click', this.handleClickBill)
     const file = this.document.querySelector(`input[data-testid="file"]`)
     file.addEventListener("change", this.handleChangeFile)
     this.fileUrl = null
@@ -15,6 +17,11 @@ export default class NewBill {
     this.billId = null
     new Logout({ document, localStorage, onNavigate })
   }
+
+  handleClickBill = () => {
+    this.onNavigate(ROUTES_PATH['Bills'])
+  }
+
   handleChangeFile = e => {
     e.preventDefault();
     const fileInput = this.document.querySelector(`input[data-testid="file"]`);

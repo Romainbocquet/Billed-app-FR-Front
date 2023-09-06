@@ -13,6 +13,8 @@ export default class {
     this.store = store
     const buttonNewBill = document.querySelector(`button[data-testid="btn-new-bill"]`)
     if (buttonNewBill) buttonNewBill.addEventListener('click', this.handleClickNewBill)
+    const buttonNewBillNav = document.querySelector(`div[data-testid="icon-mail"]`)
+    if (buttonNewBillNav) buttonNewBillNav.addEventListener('click', this.handleClickNewBill)
     const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`)
     if (iconEye) iconEye.forEach(icon => {
       icon.addEventListener('click', () => this.handleClickIconEye(icon))
@@ -24,12 +26,12 @@ export default class {
     this.onNavigate(ROUTES_PATH['NewBill'])
   }
 
-    handleClickIconEye = (icon) => {
-      const billUrl = icon.getAttribute("data-bill-url")
-      const imgWidth = Math.floor($('#modaleFile').width() * 0.5)
-      $('#modaleFile').find(".modal-body").html(`<div style='text-align: center;' class="bill-proof-container"><img width=${imgWidth} src=${billUrl} alt="Bill" /></div>`)
-      $('#modaleFile').modal('show')
-    }
+  handleClickIconEye = (icon) => {
+    const billUrl = icon.getAttribute("data-bill-url")
+    const imgWidth = Math.floor($('#modaleFile').width() * 0.5)
+    $('#modaleFile').find(".modal-body").html(`<div style='text-align: center;' class="bill-proof-container"><img width=${imgWidth} src=${billUrl} alt="Bill" /></div>`)
+    $('#modaleFile').modal('show')
+  }
 
   getBills = () => {
     if (this.store) {
