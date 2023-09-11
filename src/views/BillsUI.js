@@ -19,9 +19,7 @@ const row = (bill) => {
     `)
   }
 
-const rows = (data) => {
-  return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
-}
+const rows = (data) => (data && data.length) ? (data.sort((a, b) => new Date(b.date) - new Date(a.date)), data.map((bill) => row(bill)).join("")) : "";
 
 export default ({ data: bills, loading, error }) => {
   
@@ -47,7 +45,7 @@ export default ({ data: bills, loading, error }) => {
   } else if (error) {
     return ErrorPage(error)
   }
-  
+
   return (`
     <div class='layout'>
       ${VerticalLayout(120)}

@@ -30,21 +30,21 @@ export default () => {
                     <input type="text" class="form-control blue-border" data-testid="expense-name" placeholder="Vol Paris Londres" />
                   </div>
                   <div class="col-half">
-                    <label for="datepicker" class="bold-label">Date</label>
+                    <label for="datepicker" class="bold-label">Date *</label>
                     <input required type="date" class="form-control blue-border" data-testid="datepicker" />
                   </div>
                   <div class="col-half">
-                    <label for="amount" class="bold-label">Montant TTC </label>
+                    <label for="amount" class="bold-label">Montant TTC *</label>
                     <input required type="number" class="form-control blue-border input-icon input-icon-right" data-testid="amount" placeholder="348"/>
                   </div>
                   <div class="col-half-row">
                     <div class="flex-col"> 
                       <label for="vat" class="bold-label">TVA</label>
-                      <input type="number" class="form-control blue-border" data-testid="vat" placeholder="70" />
+                      <input type="number" class="form-control blue-border" data-testid="vat" placeholder="vat 70" />
                     </div>
                     <div class="flex-col">
                       <label for="pct" class="white-text">%</label>
-                      <input required type="number" class="form-control blue-border" data-testid="pct" placeholder="20" />
+                      <input required type="number" class="form-control blue-border" data-testid="pct" placeholder="pct 20 *" />
                     </div>
                   </div>
                 </div>
@@ -54,7 +54,7 @@ export default () => {
                     <textarea class="form-control blue-border" data-testid="commentary" rows="3"></textarea>
                   </div>
                   <div class="col-half">
-                    <label for="file" class="bold-label">Justificatif</label>
+                    <label for="file" class="bold-label">Justificatif *</label>
                     <input required type="file" class="form-control blue-border" data-testid="file" />
                   </div>
                 </div>
